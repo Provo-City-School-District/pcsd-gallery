@@ -1,0 +1,30 @@
+.gallery img {
+    border:none!important;
+}
+.gallery {
+    display: grid;
+}
+.gallery .gallery-item {
+    width: 100%!important;
+}
+.gallery .gallery-item .gallery-icon {
+    height: 140px;
+    overflow: hidden;
+    margin-bottom: 10px;
+} 
+.gallery .gallery-item .wp-caption-text {
+    font-style: italic;
+}  
+
+@media (min-width: 450px) {
+    
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 850px) {
+    
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
