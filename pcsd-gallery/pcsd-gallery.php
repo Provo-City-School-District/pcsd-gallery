@@ -12,7 +12,7 @@ function pcsd_gallery_enqueue(){
 }
 add_action( 'wp_enqueue_scripts', 'pcsd_gallery_enqueue' );
 function pcsd_gallery($content) {
-    if(is_single() && is_main_query() && !is_admin()){
+    if(!is_admin()){
         //    echo '<article>';
         echo $content;
        // echo '</article>';
