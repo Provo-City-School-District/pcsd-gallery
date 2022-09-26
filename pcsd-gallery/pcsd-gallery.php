@@ -30,5 +30,5 @@ function pcsd_gallery($content) {
 
     }
 }
-add_filter('the_content', 'pcsd_gallery', 9999);
+add_filter('the_content', 'pcsd_gallery', 100);
 ?>
