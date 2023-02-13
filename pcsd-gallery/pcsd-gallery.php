@@ -2,7 +2,7 @@
 /*
   Plugin Name: PCSD Gallery
   Description: Gallery system for Wordpress Editor
-  Version: 1.0
+  Version: 1.1
   Author: Josh Espinoza
   Author URI: tech.provo.edu
 */
@@ -19,6 +19,8 @@ function pcsd_gallery($content)
         echo $content;
         // echo '</article>';
     }
+    wp_reset_query();
+   
     if (get_field('choose_gallery') != "off") {
         if (get_field('choose_gallery') == "image") {
             $pcsd_gallery_raw = get_field('gallery_images');
@@ -28,8 +30,11 @@ function pcsd_gallery($content)
                 array_push($pcsd_image_ids, $image['image']);
             }
             $columns = count($pcsd_image_ids);
-            $pcsd_id_prep = implode(',', $pcsd_image_ids);
-            echo do_shortcode('[gallery columns="' . $columns . '" link="file" size="medium" ids="' . $pcsd_id_prep . '"]');
+            if($columns > 0) {
+                $pcsd_id_prep = implode(',', $pcsd_image_ids);
+                echo do_shortcode('[gallery columns="' . $columns . '" link="file" size="medium" ids="' . $pcsd_id_prep . '"]');
+            }
+            
         }
         if (get_field('choose_gallery') == "video") {
             $pcsd_gallery_raw = get_field('video_playlist');
