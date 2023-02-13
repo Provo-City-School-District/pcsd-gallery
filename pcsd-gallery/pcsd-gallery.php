@@ -2,7 +2,7 @@
 /*
   Plugin Name: PCSD Gallery
   Description: Gallery system for Wordpress Editor
-  Version: 1.1
+  Version: 1.11
   Author: Josh Espinoza
   Author URI: tech.provo.edu
 */
