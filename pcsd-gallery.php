@@ -30,11 +30,10 @@ function pcsd_gallery($content)
                 array_push($pcsd_image_ids, $image['image']);
             }
             $columns = count($pcsd_image_ids);
-            if($columns > 0) {
+            if ($columns > 0) {
                 $pcsd_id_prep = implode(',', $pcsd_image_ids);
-                echo do_shortcode('[gallery columns="' . $columns . '" link="file" size="medium" ids="' . $pcsd_id_prep . '"]');
+                echo do_shortcode('[gallery columns="' . $columns . '" link="file" size="medium" ids="' . $pcsd_id_prep . '" group="gallery"]');
             }
-            
         }
         if (get_field('choose_gallery') == "video") {
             $pcsd_gallery_raw = get_field('video_playlist');
