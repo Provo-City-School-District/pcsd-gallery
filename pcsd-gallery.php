@@ -15,12 +15,10 @@ add_action('wp_enqueue_scripts', 'pcsd_gallery_enqueue');
 function pcsd_gallery($content)
 {
     if (!is_admin()) {
-        //    echo '<article>';
         echo $content;
-        // echo '</article>';
     }
     wp_reset_query();
-   
+
     if (get_field('choose_gallery') != "off") {
         if (get_field('choose_gallery') == "image") {
             $pcsd_gallery_raw = get_field('gallery_images');
